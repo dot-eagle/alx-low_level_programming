@@ -1,20 +1,11 @@
-#include <stdio.hi**
- /**
- * main - Entry point
- *
+#include <stdio.h>
+/**
+ * main - main block
  * Description: 'the program's description'
- *
- * Return: Always 0 (Success)
+ * Return: 0
  */
 int main(void)
 {
-	char charType;
-	int intType;
-	long int longintType;
-	long long int longlonginttype;
-	float floatType;
-
-	/* We use Sizeof to evaluate the size of variable */
 	printf("Size of a char: %zu byte(s)\n", sizeof(char));
 	printf("Size of an int: %zu byte(s)\n", sizeof(int));
 	printf("Size of a long int: %zu byte(s)\n", sizeof(long int));
