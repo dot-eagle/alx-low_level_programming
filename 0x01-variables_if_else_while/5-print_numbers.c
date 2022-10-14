@@ -1,7 +1,8 @@
 #include <stdio.h>
 /**
  * main - printing single digit numbers
- * Reaturn: 0 as success
+ * Description - single digit base 10 numbers
+ * Return: 0 as success
  */
 
 int main(void)
@@ -14,6 +15,7 @@ int main(void)
 		d++;
 	}
 	printf("\n");
+
 	return (0);
 }
 
