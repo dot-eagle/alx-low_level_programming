@@ -1,1 +1,1 @@
-gcc -S -masm=Intel $CFILE
+gcc -S -masm=intel $CFILE
