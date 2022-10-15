@@ -8,24 +8,33 @@
 
 int main(void)
 {
-	int p, q;
+	int p = '0';
+	int q = '0';
 
-	for (p = 0; p <= 8; p++)
+	while (p <= '9')
 	{
-		for (q = 1; q <= 9; q++)
+		while (q <= '9')
 		{
-			if (p > q)
+			if (!(p > q || p == q))
 			{
 				putchar(p);
 				putchar(q);
-				if (q != 8 || p != 9)
+				if (p == 8 && q == 9)
+				{
+					putchar('\n');
+				}
+				else
 				{
 					putchar(',');
 					putchar(' ');
 				}
 			}
+			q++;
 		}
+		q  = '0';
+		p++;
 	}
+
 	putchar('\n');
 	return (0);
 }
