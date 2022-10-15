@@ -34,7 +34,5 @@ int main(void)
 		q  = '0';
 		p++;
 	}
-
-	putchar('\n');
 	return (0);
 }
