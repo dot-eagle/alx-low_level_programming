@@ -1,22 +1,20 @@
 #include "main.h"
-#include "main.c"
+
 /**
- * print_alphabet - print alphabets
+ * rint_alphabet - print alphabets
  *
  * Description: print_alphabet use to print a to z
  *
  * Return: return void
- *
  */
 
 void print_alphabet(void)
-{
-	int i;
+{ 
+	char x;
 
-	for (i = 'a'; i <= 'z'; i++)
+	for (x = 'a'; x <= 'z'; x++)
 	{
-		_putchar(i);
+		_putchar(x);
 	}
 	_putchar('\n');
-
 }
