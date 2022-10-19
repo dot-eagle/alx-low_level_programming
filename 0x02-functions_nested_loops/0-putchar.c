@@ -1,5 +1,4 @@
 #include <main.h>
-#include "main.h"
 /**
  * main - print out the characters
  *
@@ -8,6 +7,7 @@
  *  Return: 0 return integer value 0
  */
 int main(void)
+#include "main.h"
 {
 	int n = 0;
 	char name[8] = "_putchar";
