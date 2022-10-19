@@ -1,4 +1,5 @@
 #include "main.h"
+#include "_putchar.c"
 
 /**
  * rint_alphabet - print alphabets
@@ -9,7 +10,7 @@
  */
 
 void print_alphabet(void)
-{ 
+{
 	char x;
 
 	for (x = 'a'; x <= 'z'; x++)
