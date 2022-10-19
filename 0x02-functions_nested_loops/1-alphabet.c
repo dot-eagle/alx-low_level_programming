@@ -1,8 +1,7 @@
 #include "main.h"
-#include "_putchar.c"
 
 /**
- * rint_alphabet - print alphabets
+ * print_alphabet - print alphabets
  *
  * Description: print_alphabet use to print a to z
  *
