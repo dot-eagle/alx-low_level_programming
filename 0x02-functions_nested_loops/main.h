@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "_putchar.c"
-#include "main.c"
 
 /**
  * * void prototypes()
