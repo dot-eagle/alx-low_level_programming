@@ -1,17 +1,21 @@
 #include "main.h"
-
 /**
- * main - prints Holberton to stdout
+ * main - print out the characters
  *
- * Return: 0
+ * Description: return the required results
+ *
+ * Return: 0 return integer value 0
  */
 
 int main(void)
 {
-	int _putchar(char c);
-	char c = "_putchar";
+	char n;
+	char name[8] = "_putchar";
 
-	_putchar('%c\n');
-
+	for (n = 0; n < 8; n++)
+	{
+		_putchar(name[n]);
+	}
+	_putchar('\n');
 	return (0);
 }
