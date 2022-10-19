@@ -1,11 +1,11 @@
 #include "main.h"
-
 /**
  * main - print out the characters
+ *
  * Description: return the required results
- *  Return: return integer value 0
+ *
+ *  Return: 0 return integer value 0
  */
-
 int main(void)
 {
 	int n = 0;
@@ -17,5 +17,6 @@ int main(void)
 		n++;
 	}
 	_putchar('\n');
+
 	return (0);
 }
