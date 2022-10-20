@@ -12,8 +12,8 @@ int main(void)
 	int m;
 	long j, k;
 
-	j = 1;
-	k = 2;
+	k = 1;
+	j = 2;
 	printf("%ld, %ld, ", k, j);
 	for (m = k + j; m <= 50; m++)
 	{
