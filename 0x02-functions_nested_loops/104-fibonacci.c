@@ -13,7 +13,7 @@ int main(void)
 
 	ns = 2;
 	ms = 1;
-	ns = ns - ns;
+	nb = ns - ns;
 	mb = ms - ms;
 	printf("%ld, %ld, ", ms, ns);
 	for (i = ns + ms; i <= 98; i++)
@@ -39,7 +39,7 @@ int main(void)
 		}
 		printf("%ld", ns);
 		if (i < 98)
-			printf(", ");
+		printf(", ");
 	}
 	printf("\n");
 	return (0);
