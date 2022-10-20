@@ -25,4 +25,4 @@ void print_square(int size);
 void print_triangle(int size);
 int largestprime(long, int);
 
-#endif
+#endif /* MAIN_H */
