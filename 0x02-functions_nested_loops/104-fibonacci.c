@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	long i, ms, mb, ns, nb, oldns, oldnb, zerocount;
+	long i, ms, mb, ns, nb, zerocount;
 
 	ns = 2;
 	ms = 1;
