@@ -1,20 +1,19 @@
 #include "main.h"
 #include <math.h>
 
-
 /**
- * main -
+ * main -prints the largest prime factor of the number 612852475143
  * @
  *
  * Descript
  *
- * Return: void
+ * Return: 0 as success
  *
  */
 
 int main(void)
 {
-	long int d, g, max;
+	long int d, max, g;
 
 	d = 612852475143;
 	max = -1;
