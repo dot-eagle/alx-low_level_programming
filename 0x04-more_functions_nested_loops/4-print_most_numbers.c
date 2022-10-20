@@ -5,7 +5,7 @@
  *
  * Description: print out the required result
  *
- * Return: 0 return void
+ * Return: return void
  *
  */
 
