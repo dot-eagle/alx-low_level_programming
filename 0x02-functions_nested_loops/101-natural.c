@@ -9,15 +9,22 @@
 
 int main(void)
 {
-	int f, sum;
+	int i, j, k, jm, km;
 
-	sum = 0;
-	for (f = 1; f < 1024; f++)
+	i = 0;
+	for (j = 0; j <= (1024 / 3); j++)
 	{
-		if (f % 3 == 0 || f % 5 == 0)
-			sum += 1;
+		jm = 3 * j;
+		i = i + jm;
 	}
-	printf("%d\n", sum);
-
+	for (k = 0; k <= (1024 / 5); k++)
+	{
+		if (!(k % 3 == 0))
+		{
+			km = 5 * k;
+			i = i + km;
+		}
+	}
+	printf("%i\n", i);
 	return (0);
 }
