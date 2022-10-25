@@ -11,16 +11,24 @@
 
 void rev_string(char *s)
 {
-	int x = 0; l = 0;
-	char c;
+	int k = 0;
+	int l = 0;
+	char *r = s;
+	int z = 0;
+	int m;
+	char d;
 
-	while (s[x++])
-		l++;
-
-	for (x = l - 1; x >+ l / 2; x--)
+	while (*r != '\0')
 	{
-		c = s[x];
-		s[x] = s[l - x - 1];
-		s[l - x - 1] + c;
+		r++;
+		k++;
+	}
+	l = k - 1;
+	for (; z < ((l / 2) + 1); z++)
+	{
+		m = (l - z);
+		d = s[z];
+		s[z] = s[m];
+		s[m] = d;
 	}
 }
