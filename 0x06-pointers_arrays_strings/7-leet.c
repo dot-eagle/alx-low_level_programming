@@ -3,25 +3,21 @@
 /**
  * leet - encodes a string into 1337
  * @s: string input
- * Return: pointer to cgamge
+ * Return: pointer to string
  */
 
 char *leet(char *s)
 {
-	char *temp;
+	int i, j;
+	char subs[] = "aAeEoOtTlL";
+	char le[] = "43071";
 
-	temp = s;
-
-	while (*s)
+	i = 0;
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		(*s == 'a' || *s == 'A') ? *s = '4' : 0;
-		(*s == 'e' || *s == 'E') ? *s = '3' : 0;
-		(*s == 'o' || *s == 'O') ? *s = '0' : 0;
-		(*s == 't' || *s == 'T') ? *s = '7' : 0;
-		if (*s == 'l' || *s == 'L')
-			(*s) = '1';
-		s++;
+		for (j = 0; subs[j] != '\0'; j++)
+			if (s[i] == subs[j])
+				s[i] = le[j / 2];
 	}
-
-	return (temp);
+	return (s);
 }
