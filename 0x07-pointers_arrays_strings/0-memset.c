@@ -3,10 +3,10 @@
 /**
  * _memset - function that fills memory with a constant byte
  * @s: allocated memory
+ * @b: constant char byte 
  * @n: number of bytes to fill
- * @b: constant char byte
  *
- * Return: pointer to memory area dest
+ * Return: pointer to memory area s
  */
 
 
