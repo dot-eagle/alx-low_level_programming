@@ -2,8 +2,8 @@
 
 /**
  * _memset - function that fills memory with a constant byte
- * @s: allocated memory
  * @b: constant char byte
+ * @s: pointers to allocated memory
  * @n: number of bytes to fill
  *
  * Return: pointer to memory area s
@@ -11,11 +11,11 @@
 
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int i;
+	unsigned int y;
 
-	for (i = 0; i < n; i++)
+	for (y = 0; y < n; y++)
 	{
-		*(s + i) = b;
+		s[y] = b;
 	}
 	return (s);
 }
