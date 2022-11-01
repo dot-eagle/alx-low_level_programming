@@ -20,7 +20,7 @@ void print_diagsums(int *a, int size)
 		if (y % (size + 1) == 0)
 			sum0 += *(a + y);
 		if (y % (size - 1) == 0 && y != 0 && y < size * size - 1)
-				sum1 += *(a + y);
+			sum1 += *(a + y);
 	}
 	printf("%d, %d\n", sum0, sum1);
 }
