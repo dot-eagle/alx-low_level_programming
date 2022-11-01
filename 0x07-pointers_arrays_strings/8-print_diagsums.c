@@ -11,19 +11,16 @@
 
 void print_diagsums(int *a, int size)
 {
-	int sum0, sum1;
-	int row, col;
+	int y;
+	int sum0 = 0;
+	int sum1 = 0;
 
-	sum0 = 0;
-	sum1 = 0;
-	row = 0;
-	col = 0;
-	while (row < size)
+	for (y = 0; y < (size * size); y++)
 	{
-		sum0 += *(a + row  * size + col);
-		sum1 += *(a + row  * size + (size - 1 - col));
-		col++;
-		row++;
+		if (y % (size + 1) == 0)
+			sum0 += *(a + y);
+		if (y % (size - 1) == 0 && y != 0 && y < size * size - 1)
+				sum1 += *(a + y);
 	}
 	printf("%d, %d\n", sum0, sum1);
 }
