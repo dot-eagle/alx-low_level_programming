@@ -1,39 +1,43 @@
 #include "main.h"
 
-/** int prime_number(int n, int a); */
+int le_prime(int a, int p);
 
+/**
+ * le_prime - checkers for prime
+ * @a: interger
+ * @p: integer
+ *
+ * Return: return 1 if the input integer is prime number, else 0
+ */
+
+int le_prime(int a, int p)
+{
+	if (p != 1)
+	{
+		if (a == p)
+		{
+			return (1);
+		}
+		else if (p % a == 0 || p <= 1)
+		{
+			return (0);
+		}
+		else
+			return (le_prime(a + 1, p));
+	}
+	return (0);
+}
 
 /**
  * is_prime_number - returns 1 if input integer is a prime number, else 0
- * @n: integer input number
+ * @n: integer number to
  *
- * Return: 1 if n is prime, else 0
+ * Return: 1 if prime, else 0
  */
 
 int is_prime_number(int n)
 {
-	if (n <= 1)
-		return (0);
+int a = 2;
 
-	return (is_prime_number(n));
-}
-
-/**
- * prime_number - function for is_prime_number
- * @n: integer number to be tested
- * @a: number to test with
- *
- * Return: 1 if a Prime else 0
- */
-
-int prime_number(int n, int a)
-{
-	if (a == 1)
-		return (1);
-	else if (n % a == 0)
-		return (0);
-	else if (n % a != 0)
-		return (prime_number(n, a - 1));
-	else
-		return (0);
+return (le_prime(a, n));
 }
