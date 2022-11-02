@@ -16,13 +16,13 @@ int is_prime_number(int n)
 		return (0);
 	}
 
-	if (n < s * 2)
+	else if (n < s * 2)
 	{
 		s = 2;
 		return (1);
 	}
 
-	if (n % s == 0)
+	else if (n % s == 0)
 	{
 		s = 2;
 		return (0);
