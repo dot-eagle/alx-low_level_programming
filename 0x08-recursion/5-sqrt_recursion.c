@@ -1,12 +1,10 @@
 #include "main.h"
 
-int sqrt_rec_odd(int start, int n);
-
 /**
  * _sqrt_recursion - returns the natural square root of a number
  * @n: natural intger number
  *
- * Return:0
+ * Return: 0
  */
 
 int _sqrt_recursion(int n)
