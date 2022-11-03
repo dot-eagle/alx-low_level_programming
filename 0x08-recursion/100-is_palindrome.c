@@ -10,14 +10,40 @@
 
 int is_palindrome(char *s)
 {
-	int y = 1;
+	int findlen = 1, len = -1, count;
 
-	if (*s == y)
+	if (findlen == 0)
 	{
-		return (1);
+		if (count > len / 2)
+		{
+			findlen = 1, len = 0;
+			return (1);
+		}
+		else if (*(s - count) == *(s - len + count))
+		{
+			count++;
+			return (is_palindrome(s));
+		}
+		else
+		{
+			findlen = 1, len = 0;
+			return (0);
+		}
+	}
+	else if (findlen && *s != '\0')
+	{
+		if (len == -1)
+			len = 0;
+		len++;
+		return (is_palindrome(++s));
 	}
 	else
 	{
-		return (0);
+		len--;
+		findlen = 0;
+		count = 0;
+		if (len < 0)
+			return (1);
+		return (is_palindrome(--s));
 	}
 }
