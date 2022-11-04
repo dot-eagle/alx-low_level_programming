@@ -3,7 +3,7 @@
 /**
  * main - prints the number of arguments
  * @argc: integer argument count
- * argv: Array argument vector for values
+ * @argv: Array argument vector for values
  *
  * Return: 0 as success
  */
