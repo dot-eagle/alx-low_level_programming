@@ -11,18 +11,22 @@
 
 int main(int argc, char *argv[])
 {
-	int d;
-	long e;
+	int d, h, k;
 
-	for (d = 1, e = 0; d < argc; d++)
+	k = 0;
+
+	for (d = 1; d < argc; d++)
 	{
-		if (*argv[d] == 0 || atoi(argv[d]) <= 0)
+		for (h = 0; argv[d][h] != '\0' ; h++)
 		{
-			printf("Error\n");
-			return (1);
+			if (argv[d][h] < 47 || argv[d][h] > 57)
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		e += atoi(argv[d]);
+		k += atoi(argv[d]);
 	}
-	printf("%ld\n", e);
+	printf("%d\n", k);
 	return (0);
 }
