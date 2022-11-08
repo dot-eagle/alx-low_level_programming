@@ -20,7 +20,7 @@ char *create_array(unsigned int size, char c)
 	if (arr == 0)
 		return (0);
 
-	for (x = 0, x < size; x++;)
+	for (x = 0; x < size; x++)
 		arr[x] = c;
 	return (arr);
 }
