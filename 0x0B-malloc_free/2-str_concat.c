@@ -13,35 +13,32 @@ char *str_concat(char *s1, char *s2)
 	char *pst;
 	int g, u, t;
 
-	t = 0;
+	g = u = 0;
 
-	if (s1 == NULL || s2 == NULL)
-		s1 = s2 = "";
-
-	for (g = 0; g <= *s1; g++)
-	{
-	}
-
-	for (u = 0; u <= *s2; u++)
-	{
-	}
+	if (s1 != NULL)
+		for (g = 0; s1[g]; g++)
+		{
+		}
+	if (s2 != NULL)
+		for (u = 0; s2[u]; u++)
+		{
+		}
 
 	pst = malloc(sizeof(char) * (g + u + 1));
 
 	if (pst == NULL)
 		return (NULL);
 
-	while (*s1)
+	t = 0;
+	while (t < (g + u))
 	{
-		pst[t] = *s1;
+		if (t < g)
+			pst[t] = s1[t];
+		else
+			pst[t] = s2[t - g];
 		t++;
-		s1++;
 	}
-	while (*s2)
-	{
-		pst[t] = *s2;
-		t++;
-		s2++;
-	}
+	pst[t] = 0;
+
 	return (pst);
 }
