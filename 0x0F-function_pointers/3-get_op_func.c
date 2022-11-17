@@ -16,15 +16,15 @@ int (*get_op_func(char *s))(int, int)
 		{"*", op_mul},
 		{"/", op_div},
 		{"%", op_mod},
-		{NULL, NULL};
+		{NULL, NULL},
 	};
 
 	int v = 0;
 
-	while (ops(*(s + v)).op)
+	while (ops[v].op)
 	{
-		if (*(ops(*(s + v)).op) == *s && *(s + 1) == '\0')
-			return (ops(*(s + v)).f);
+		if (*(ops[v].op) == *s && *(s + 1) == '\0')
+			return (ops[v].f);
 		v++;
 	}
 	return (0);
