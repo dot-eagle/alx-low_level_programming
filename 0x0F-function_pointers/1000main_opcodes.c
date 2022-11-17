@@ -10,32 +10,15 @@
 
 int main(int argc, char *argv[])
 {
-	int f, nu_bytes;
-	char *op_co = (char *) jn;
-
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
-
-	nu_bytes = atoi(argv[1]);
-
-	if (nu_bytes < 0)
+	if (atoi(argv[1]) < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
-	f = 0;
-	while (f < nu_bytes)
-	{
-		printf("%02x", op_co[f] & 0xFF);
-		if (f != nu_bytes - 1)
-		{
-			printf(" ");
-		}
-		f++;
-	}
-	printf("\n");
 	return (0);
 }
