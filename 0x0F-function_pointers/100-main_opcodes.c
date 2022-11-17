@@ -11,12 +11,12 @@
 int main(int argc, char *argv[])
 {
 	int f, nu_bytes;
-	char *op_co = (char *) jn;
+	char *op_co = (char *) main;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
 
 	nu_bytes = atoi(argv[1]);
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	if (nu_bytes < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
 	f = 0;
 	while (f < nu_bytes)
