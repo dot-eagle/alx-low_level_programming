@@ -73,6 +73,7 @@ void print_all(const char * const format, ...)
 	while (format && format[z])
 	{
 
+		b = 0;
 		while (b < 4)
 		{
 			if (identifier[b].ch == format[z])
