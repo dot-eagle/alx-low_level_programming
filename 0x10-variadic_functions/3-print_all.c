@@ -75,7 +75,7 @@ void print_all(const char * const format, ...)
 
 		while (b < 4)
 		{
-			if (identifier[b].all == format[z])
+			if (identifier[b].ch == format[z])
 			{
 				printf("%s", comma);
 				identifier[b].pfun(arguments);
