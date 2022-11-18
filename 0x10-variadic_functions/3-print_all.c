@@ -64,7 +64,7 @@ void print_all(const char * const format, ...)
 	};
 
 	int b = 0, z = 0;
-	char *comma = " ";
+	char *comma = "";
 
 	va_list arguments;
 
