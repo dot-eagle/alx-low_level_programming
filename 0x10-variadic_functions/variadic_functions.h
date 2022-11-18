@@ -19,7 +19,7 @@ typedef struct print_ch
 {
 	char ch;
 	void (*pfun)(va_list arguments);
-} mod_t;
+} symbol_t;
 
 /* typedef struct type variable_type; */
 
