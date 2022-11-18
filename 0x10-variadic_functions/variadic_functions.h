@@ -18,8 +18,8 @@
 typedef struct print_ch
 {
 	char *ch;
-	void (*printf)(va_list);
-} p_ch;
+	void (*pf)();
+} print_ch;
 
 //typedef struct type variable_type;
 
