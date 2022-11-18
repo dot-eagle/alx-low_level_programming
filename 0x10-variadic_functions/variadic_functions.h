@@ -19,7 +19,7 @@ typedef struct print_ch
 {
 	char ch;
 	void (*pfun)(va_list arguments);
-} symbol_t;
+} princh;
 
 /* typedef struct type variable_type; */
 
@@ -29,11 +29,11 @@ void print_strings(const char *separator, const unsigned int n, ...);
 int _putchar(char);
 void print_all(const char * const format, ...);
 
-/*
-* void pr_int(va_list);
-* void pr_char(va_list);
-* void pr_float(va_list);
-* void pr_str(va_list);
-*/
+
+void pr_int(va_list);
+void pr_char(va_list);
+void pr_float(va_list);
+void pr_str(va_list);
+
 
 #endif /* _VARIADIC_FUNCTIONS_H  */
