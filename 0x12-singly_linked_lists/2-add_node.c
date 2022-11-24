@@ -31,11 +31,9 @@ list_t *add_node(list_t **head, const char *str)
 
 	new_node->str = strdup(str);
 
-	new_par = 0;
-	while (str[new_par] != '\0')
+	for (new_par = 0; str[new_par] != '\0'; new_par++;)
 	{
 		new_node->len = new_par;
-		new_par++;
 	}
 	new_node->len = new_par;
 
