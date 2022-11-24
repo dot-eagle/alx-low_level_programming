@@ -12,7 +12,7 @@ size_t print_list(const list_t *h)
 	int node;
 	
 	node = 0;
-	while (node != '\0')
+	while (h != NULL)
 	{
 		if (h->str != NULL)
 		{
