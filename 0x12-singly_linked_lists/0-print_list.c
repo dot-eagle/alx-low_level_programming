@@ -9,14 +9,14 @@
 
 size_t print_list(const list_t *h)
 {
-	int y;
+	int h;
 
-	y = 0;
+	h = 0;
 	while (h != NULL)
 	{
 		printf("[%d] %s\n", h->len, h->str);
 		h = h->next;
-		y++;
+		h++;
 	}
-	return (y);
+	return (h);
 }
