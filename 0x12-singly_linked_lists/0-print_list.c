@@ -9,7 +9,7 @@
 
 size_t print_list(const list_t *h)
 {
-	int node = 0;
+	int node;
 	
 	node = 0;
 	while (node != '\0')
