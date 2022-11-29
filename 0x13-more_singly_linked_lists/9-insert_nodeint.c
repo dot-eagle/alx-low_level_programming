@@ -18,14 +18,14 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	{
 		return (NULL);
 	}
+
 	if (idx)
 	{
 		ol_nod = *head;
-		q = 0;
-		while (q < idx - 1 && ol_nod)
+		for (q = 0; q < idx - 1 && ol_nod; q++)
 		{
 			ol_nod = ol_nod->next;
-		} q++;
+		}
 
 		if (!ol_nod)
 			return (NULL);
