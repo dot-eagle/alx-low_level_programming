@@ -6,7 +6,7 @@
  *
  * @head: double pointer head of list
  *
- * Returns: head node’s data else 0 if linked list is empty
+ * Return: head node’s data else 0 if linked list is empty
  */
 
 int pop_listint(listint_t **head)
