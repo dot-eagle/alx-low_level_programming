@@ -19,8 +19,6 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return (-1);
 	}
 
-	del_nod = *head;
-
 	if (index == 0)
 	{
 		*head = (*head)->next;
@@ -28,8 +26,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return (1);
 	}
 
-	b = 0;
-	while (b < (index - 1))
+	for (b = 0; b < (index - 1); b++)
 	{
 		if (del_nod->next == NULL)
 		{
@@ -37,7 +34,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		}
 		del_nod = del_nod->next;
 	}
-	b++;
+
 	tmp_nod = del_nod->next;
 	del_nod->next = tmp_nod->next;
 
