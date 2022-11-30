@@ -3,7 +3,7 @@
 /**
  * add_nodeint_end - adds a new node at the end of a listint_t list
  * @head: double pointer
- * @n: constant integer
+ * @n: constant integer node store
  *
  * Return: the address of the new element, or NULL if it failed
  */
@@ -13,24 +13,28 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	listint_t *new_node;
 	listint_t *m;
 
-	if (head == NULL)
+	new_node = malloc(sizeof(listint_t));
+
+	if (new_node == NULL)
 	{
 		return (NULL);
 	}
-	new_node = malloc(sizeof(listint_t));
-	new_node->n = n;
-	new_node->next = NULL;
+
 	if (*head == NULL)
 	{
 		*head = new_node;
-		return (*head);
 	}
-	m = *head;
-	while (m->next)
+	else
 	{
-		m = m->next;
+		m = *head;
+		while (m->next != NULL)
+		{
+			m = m->next;
+		}
+		m->next = new_node;
 	}
-	m->next = new_node;
-	return (new_node);
+	new_node->next = NULL;
+	new_node->n = n;
 
+	return (new_node);
 }
