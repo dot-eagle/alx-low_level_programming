@@ -18,7 +18,7 @@ listint_t *_check_and_find(listint_t *head, listint_t *prev)
 	}
 
 	node.next = prev;
-	/* node.addy = head; */
+
 	tmp = node.next;
 
 	while (tmp != NULL && tmp != head)
