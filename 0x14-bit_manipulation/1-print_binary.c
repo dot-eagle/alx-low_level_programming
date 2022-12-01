@@ -12,9 +12,13 @@ void print_binary(unsigned long int n)
 {
 	int v, t, k, e;
 
+	e = n, v = 0;
+
 	if (n == 0)
+	{
 		printf("0");
-	return;
+		return;
+	}
 
 	e = n, v = 0;
 	while (e != 0)
