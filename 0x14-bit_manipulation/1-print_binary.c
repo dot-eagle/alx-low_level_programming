@@ -20,7 +20,7 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	e = n, v = 0;
+	e = n;
 	while (e != 0)
 	{
 		v++;
