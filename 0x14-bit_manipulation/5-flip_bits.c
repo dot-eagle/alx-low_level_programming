@@ -11,7 +11,8 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int xor, num_bits;
+	unsigned long int xor;
+	unsigned int num_bits;
 
 	num_bits = 0;
 	xor = n ^ m;
@@ -22,5 +23,5 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		xor >>= 1;
 	}
 
-	return (num_bits);
+	return (num_bits)i;
 }
