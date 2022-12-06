@@ -1,42 +1,51 @@
 #include "main.h"
 
-
 /**
- * append_text_to_file - appends text at the end of a file
- * @filename: filename
- * @text_content: added content
+ * main - copies the content of a file to another file
+ * @av: argument vector
+ * @ac: argument count
  *
- * Return: 1 if the file exists. -1 if the fails does not exist
- * or if it fails
+ * Return: 0 on Success
  */
 
-
-int append_text_to_file(const char *filename, char *text_content)
+int main(int ac, char *av[])
 {
-	int fd;
-	int nletters;
-	int rwr;
+	int file_f, file_to, rd, wr;
+	char buff[1024];
 
-	if (!filename)
-		return (-1);
-
-	fd = open(filename, O_WRONLY | O_APPEND);
-
-	if (fd == -1)
-		return (-1);
-
-	if (text_content)
+	if (ac != 3)
 	{
-		for (nletters = 0; text_content[nletters]; nletters++)
-			;
-
-		rwr = write(fd, text_content, nletters);
-
-		if (rwr == -1)
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
+	}
+	file_f = open(av[1], O_RDONLY);
+	if (file_f == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
+	}
+	file_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (file_to == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
+	}
+	while ((rd = read(file_f, buff, 1024)) != 0)
+	{
+		if (rd == -1)
 		{
-			return (-1);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
+		}
+		wr = write(file_to, buff, rd);
+		if (wr == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 		}
 	}
-	close(fd);
-	return (1);
+	if (close(file_f) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_f), exit(100);
+	}
+	if (close(file_to) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to), exit(100);
+	}
+	return (0);
 }
