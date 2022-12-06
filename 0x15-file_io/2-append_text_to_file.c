@@ -11,12 +11,13 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int err, fdes, bytes;
-
 	/* mode_t mode = S_IRUSR | S_IWUSR; */
 
 	if (filename == NULL)
 		return (-1);
+
 	fdes = open(filename, O_WRONLY | O_APPEND);
+
 	if (fdes == -1)
 		return (-1);
 	if (text_content == NULL)
@@ -32,9 +33,8 @@ int append_text_to_file(const char *filename, char *text_content)
 	err = write(fdes, text_content, bytes);
 
 	if (err == -1)
-	{
 		return (-1);
-	}
+
 	close(fdes);
 	return (1);
 }
