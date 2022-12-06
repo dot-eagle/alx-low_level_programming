@@ -8,32 +8,33 @@
  * Return: 1 on success and -1 on failure
  */
 
-
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int file, wr, b;
+	ssize_t err, bytes;
+	int fdes;
+	mode_t mode = S_IRUSR | S_IWUSR;
 
-	b = 0;
 	if (filename == NULL)
-	{
 		return (-1);
-	}
-	file = open(filename, O_WRONLY | O_APPEND);
-	while (text_content[b])
-		b++;
+	fdes = open(filename, O_WRONLY | O_CREAT | O_TRUNC, mode);
+	if (fdes == -1)
+		return (-1);
 	if (text_content == NULL)
 	{
-		close(file);
+		close(fdes);
 		return (1);
 	}
-	else
+
+	err = bytes = 0;
+	while (text_content[bytes])
+		bytes++;
+	if (bytes > 0)
+		err = write(fdes, text_content, bytes);
+	if (err == -1)
 	{
-		wr = write(file, text_content, b);
-	}
-	if (wr == -1)
-	{
+		close(fdes);
 		return (-1);
 	}
-	close(file);
+	close(fdes);
 	return (1);
 }
