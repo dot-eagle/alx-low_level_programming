@@ -12,13 +12,13 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int file, wr, b;
-	b = 0;
 
+	b = 0;
 	if (filename == NULL)
 	{
 		return (-1);
 	}
-
+	file = open(filename, O_WRONLY | O_APPEND);
 	while (text_content[b])
 		b++;
 	if (text_content == NULL)
