@@ -12,7 +12,7 @@
 
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	dlistint_t* cur;
+	dlistint_t *cur;
 	unsigned int e;
 
 	cur = head;
