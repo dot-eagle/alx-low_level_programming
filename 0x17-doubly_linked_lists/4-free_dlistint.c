@@ -15,15 +15,15 @@ void free_dlistint(dlistint_t *head)
 
 	if (head == NULL)
 		return;
-	else
-		while (head != NULL)
-		{
-			tempr = head;
-			head = head->next;
-			head = head->prev;
-			free(tempr);
 
-		}
+	while (head != NULL)
+	{
+		tempr = head;
+		head = head->next;
+		head = head->prev;
+		free(tempr);
+
+	}
 	free(head);
 }
 
