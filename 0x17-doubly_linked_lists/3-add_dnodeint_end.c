@@ -1,4 +1,3 @@
-
 #include "lists.h"
 
 
@@ -10,44 +9,37 @@
  * Return: the address of the new element, or NULL if it failed
  */
 
+
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *len;
+	dlistint_t *cur;
 	dlistint_t *new_Node;
-	/*
-	 * const int n;
-	 * dlistint_t *head;
-	 * dlistint_t *new_Node;
 
-	 * dlistint_t new_Node = (dlistint_t* ) malloc(sizeof(dlistint_t));
-
-	*/
-	if ((head) == NULL)
-		return (NULL);
-
-
+	cur = *head;
 	new_Node = malloc(sizeof(dlistint_t));
 
-	if (new_Node)
-	{
-		new_Node->n = n;
-		new_Node->next = NULL;
-		new_Node->prev = NULL;
+	new_Node->n = n;
+	new_Node->next = NULL;
 
-		if (*head == NULL)
-		{
-			*head = new_Node;
-		}
-		else
-		{
-			len = *head;
-			while ((len->next) != NULL)
-				(*head) = (*head)->next;
-			(*head)->next = new_Node;
-			new_Node->prev = len;
-		}
+	if (new_Node == NULL)
+		return (NULL);
+
+	new_Node->n = n;
+	new_Node->next = NULL;
+
+	if (cur != NULL)
+	{
+		while (cur->next != NULL)
+			cur = cur->next;
+		cur->next = new_Node;
 	}
+	else
+	{
+		*head = new;
+	}
+	new_Node->prev = cur;
+
 	return (new_Node);
 
-}
 
+}
