@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""returns the perimeter of the island described in grid(int list of list)"""
-
+"""
+Returns the perimeter of the island described in grid(int list of list)
+"""
 
 def island_perimeter(grid):
     """Return the island perimeter"""
@@ -15,7 +16,7 @@ def island_perimeter(grid):
                 size += 1
                 if (z > 0 and grid[y][z - 1] == 1):
                     edges += 1
-                if (1 > 0 and grid[y - 1][z] == 1):
+                if (y > 0 and grid[y - 1][z] == 1):
                     edges += 1
     pm = (size * 4 - edges * 2)
     return (pm)
